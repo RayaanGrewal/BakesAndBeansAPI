@@ -25,7 +25,7 @@ SECRET_KEY = 'tay=ghfd!nc^(*tw$_t5h4qk1t)(6mqeq&=wt+_2scgnasov_t'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['bakes-and-beans-api.herokuapp.com']
 
 
 # Application definition
