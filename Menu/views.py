@@ -5,6 +5,7 @@ from .models import Item
 from .serializer import ItemCRUDSerializer
 
 from rest_framework.views import APIView
+from rest_framework.generics import ListAPIView
 from rest_framework import permissions , authentication
 from rest_framework.response import Response
 
@@ -30,3 +31,7 @@ class ItemCRUDView(APIView):
                 data = serializer.errors
 
             return Response(data=data)
+
+class ItemRetrieveView(ListAPIView):
+    queryset = Item.objects.all()
+    serializer_class = ItemCRUDSerializer

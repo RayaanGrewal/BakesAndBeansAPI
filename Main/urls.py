@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from Account.views import UserRegisterView
-from Menu.views import ItemCRUDView
+from Menu.views import ItemCRUDView , ItemRetrieveView
 
 from rest_framework.authtoken.views import obtain_auth_token
 
@@ -24,5 +24,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('register/',UserRegisterView.as_view() , name='Register' ),
     path('login/', obtain_auth_token, name="Login"),
-    path('create-item/' , ItemCRUDView.as_view() , name="Create-item" )
+    path('create-item/' , ItemCRUDView.as_view() , name="Create-item" ),
+    path('retrieve-item/' , ItemRetrieveView.as_view() , name="Retrieve-item" )
 ]
