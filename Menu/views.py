@@ -27,6 +27,9 @@ class ItemCRUDView(APIView):
                 data['itemName'] = item.itemName
                 data['ingredients'] = item.ingredients
                 data['price'] = item.price
+                data["veg"] = item.veg
+                data["nonVeg"] = item.nonVeg
+                data["pk"] = item.pk
             else :
                 data = serializer.errors
 

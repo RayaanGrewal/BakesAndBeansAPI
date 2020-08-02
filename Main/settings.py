@@ -42,12 +42,14 @@ INSTALLED_APPS = [
     'Account',
     'Menu',
     'rest_framework',
-    'rest_framework.authtoken'
+    'rest_framework.authtoken',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -126,3 +128,7 @@ STATIC_ROOT =  os.path.join(BASE_DIR , 'staticfiles')
 STATIC_URL = '/static/'
 AUTH_USER_MODEL = 'Account.User'
 django_heroku.settings(locals() )
+
+CORS_ORIGIN_ALLOW_ALL = True
+
+#CORS_ORIGIN_WHITELIST = "http://127.0.0.1:3000",
